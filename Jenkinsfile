@@ -48,7 +48,6 @@ pipeline{
         }
         stage('Containerize') {
             steps {
-                def jarFilePath = sh(returnStdout: true, script: 'find $WORKSPACE -name "*.jar"').trim()
                 sh "docker build -t calculator ."
             }
         }
