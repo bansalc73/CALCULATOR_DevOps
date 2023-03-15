@@ -1,6 +1,10 @@
 pipeline{
     agent any
 
+    environment{
+        PATH = "/usr/local/Cellar/maven/3.9.0/libexec:$PATH"
+    }
+
     stages{
         stage('Clone Git'){
             steps{
@@ -10,13 +14,13 @@ pipeline{
 
         stage('Build'){
             steps {
-                dir('/Users/chiragbansal/Desktop/Test') {
-                    /* execute commands in the scripts directory */
-                    sh "javac src/Calculator.java"
-                    sh "java src/Calculator"
-                }
+                // dir('/Users/chiragbansal/Desktop/Test') {
+                //     /* execute commands in the scripts directory */
+                //     sh "javac src/Calculator.java"
+                //     sh "java src/Calculator"
+                // }
                 // Maven build, 'sh' specifies it is a shell command
-                // sh 'mvn clean install'
+                sh 'mvn clean install'
             
         }
             }
