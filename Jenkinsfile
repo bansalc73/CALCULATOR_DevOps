@@ -7,6 +7,7 @@ pipeline{
 
     environment{
         PATH = "/usr/local/Cellar/maven/3.9.0/libexec:$PATH"
+        DOCKER_HOST = 'tcp://localhost:2375'
     }
 
     stages{
@@ -48,6 +49,7 @@ pipeline{
         }
         stage('Containerize') {
             steps {
+                sh "export PATH=$PATH:/usr/local/bin/docker"
                 sh "docker build -t calculator ."
             }
         }
