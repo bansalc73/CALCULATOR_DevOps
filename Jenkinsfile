@@ -24,7 +24,11 @@ pipeline{
                 //     sh "java src/Calculator"
                 // }
                 // Maven build, 'sh' specifies it is a shell command
-                sh 'mvn clean install'
+                // sh 'mvn clean install'
+                // sh 'docker build -t calculator .'
+                sh "mvn clean package"
+                def jarFilePath = sh(returnStdout: true, script: 'find $WORKSPACE -name "*.jar"').trim()
+
             
         }
             }
