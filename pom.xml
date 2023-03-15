@@ -54,7 +54,7 @@
         </dependency>
 
     </dependencies>
-    <build>
+    <!-- <build>
         <finalName>maven-unit-test</finalName>
         <plugins>
 
@@ -65,7 +65,7 @@
             </plugin>
 
         </plugins>
-    </build>
+    </build> -->
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
