@@ -10,10 +10,10 @@ pipeline{
 
         stage('Build'){
             steps {
-                dir('/Users/chiragbansal/Desktop/Test/src') {
+                dir('/Users/chiragbansal/Desktop/Test') {
                     /* execute commands in the scripts directory */
-                    sh "javac Calculator.java"
-                    sh "java Calculator"
+                    sh "javac src/Calculator.java"
+                    sh "java src/Calculator"
                 }
                 // Maven build, 'sh' specifies it is a shell command
                 // sh 'mvn clean install'
