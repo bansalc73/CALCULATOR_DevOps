@@ -27,7 +27,7 @@ pipeline{
                 // sh 'mvn clean install'
                 // sh 'docker build -t calculator .'
                 sh "mvn clean package"
-                def jarFilePath = sh(returnStdout: true, script: 'find $WORKSPACE -name "*.jar"').trim()
+                // def jarFilePath = sh(returnStdout: true, script: 'find $WORKSPACE -name "*.jar"').trim()
 
             
         }
@@ -44,6 +44,12 @@ pipeline{
                     sh "mvn test"
                 }
                 
+            }
+        }
+        stage('Containerize') {
+            steps {
+                def jarFilePath = sh(returnStdout: true, script: 'find $WORKSPACE -name "*.jar"').trim()
+                sh "docker build -t calculator ."
             }
         }
     }
