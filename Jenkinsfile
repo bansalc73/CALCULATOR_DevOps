@@ -63,5 +63,6 @@ pipeline{
                     sh 'docker push bansalc73/calcimage'
                 }
             }
+        }
     }
 }
