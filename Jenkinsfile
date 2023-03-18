@@ -68,16 +68,16 @@ pipeline{
             }
         }
 
-        stage('Pull Docker Image') {
-            steps {
-                script {
-                    docker.withRegistry('https://hub.docker.com/', 'docker_HUb') {
-                        docker.context('desktop-linux')
-                        docker.image(DOCKER_IMAGE).pull()
-                    }
-                }
-            }
-        }
+        // stage('Pull Docker Image') {
+        //     steps {
+        //         script {
+        //             docker.withRegistry('https://hub.docker.com/', 'docker_HUb') {
+                        
+        //                 docker.image(DOCKER_IMAGE).pull()
+        //             }
+        //         }
+        //     }
+        // }
 
         stage('Run Docker Container') {
             steps {
