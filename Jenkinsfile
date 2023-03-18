@@ -91,7 +91,8 @@ pipeline{
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
+                    // docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
+                    sh 'docker run -it bansalc73/calc_dev_ops123:latest'
                 }
             }
         }
