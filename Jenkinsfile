@@ -68,31 +68,32 @@ pipeline{
             }
         }
 
-        stage('Docker Compose') {
-            steps{
-                script{
-                    sh 'docker compose up'
+        // stage('Docker Compose') {
+        //     steps{
+        //         script{
+        //             sh 'docker compose up'
+        //         }
+        //     }
+        // }
+
+
+        stage('Pull Docker Image') {
+            steps {
+                script {
+
+                        // docker.image(DOCKER_IMAGE).pull()
+                       sh 'docker pull bansalc73/calc_dev_ops123:latest'
+
                 }
             }
         }
 
-
-        // stage('Pull Docker Image') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://hub.docker.com/', 'docker_HUb') {
-        //                 docker.image(DOCKER_IMAGE).pull()
-        //             }
-        //         }
-        //     }
-        // }
-
-        // stage('Run Docker Container') {
-        //     steps {
-        //         script {
-        //             docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
-        //         }
-        //     }
-        // }
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
+                }
+            }
+        }
     }
 }
