@@ -72,6 +72,7 @@ pipeline{
             steps {
                 script {
                     docker.withRegistry('https://hub.docker.com/', 'docker_HUb') {
+                        docker.context('desktop-linux')
                         docker.image(DOCKER_IMAGE).pull()
                     }
                 }
