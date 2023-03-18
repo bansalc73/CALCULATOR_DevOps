@@ -7,3 +7,4 @@ services:
     # command: ["java", "-jar", "calculatorDevOps-1.0-SNAPSHOT-jar-with-dependencies.jar"]
     # stdin_open: true
     # tty: true
+    
