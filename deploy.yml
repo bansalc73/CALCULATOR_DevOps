@@ -1,0 +1,53 @@
+- name: Pull docker image of Calculator
+  hosts: all
+  tasks:
+    - name: pull docker image
+      shell: docker pull bansalc73/calc_dev_ops123
+      
+    - name: running container
+      shell: docker run -it -d bansalc73/calc_dev_ops123
+
+
+
+
+
+
+
+# - name: Pull docker image of calculator
+#   hosts: all
+#   become: true
+#   tasks:
+#     - name: Running container
+#       docker_container:
+#         name: cal_container
+#         image: bansalc73/calc_dev_ops123:latest
+#         ports:
+#           - "8081:80"
+# - name: Deploy Docker container
+#   hosts: localhost
+#   become: yes
+#   tasks: 
+#      - name: Start Calculator Docker container
+#        docker_container:
+#         name: cal_calculator
+#         image: bansalc73/calc_dev_ops123
+#         state: started
+#         restart_policy: always
+#         ports:
+#           - "80:80"
+#   # tasks:
+  #   - name: Pull Docker image
+  #     docker_image:
+  #       name: "{{ image_name }}"
+  #       state: present
+
+  #   - name: Start Docker container
+  #     docker_container:
+  #       name: "{{ container_name }}"
+  #       image: "{{ image_name }}"
+  #       state: started
+  #       restart_policy: always
+  #       published_ports:
+  #         - "{{ host_port }}:{{ exposed_port }}"
+
+
