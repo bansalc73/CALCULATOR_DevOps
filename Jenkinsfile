@@ -94,20 +94,5 @@ pipeline{
             }
         }
 
-         stage('Monitor'){
-            steps{
-                 dir('/Users/chiragbansal') {
-                    /* execute commands in the scripts directory */
-                    // sh "javac CalculatorTest.java"
-                    // sh "java CalculatorTest"
-                    // sh "javac -cp lib/junit-4.13.jar:lib/hamcrest-core-1.3.jar -d bin src/*.java test/*.java"
-                    // sh "java -cp lib/junit-4.13.jar:lib/hamcrest-core-1.3.jar:bin org.junit.runner.JUnitCore CalculatorTest"
-                    sh "docker compose up -d"
-                }
-                
-            }
-        }
-
-
     }
 }

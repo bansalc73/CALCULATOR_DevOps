@@ -1,7 +1,7 @@
 FROM openjdk:11
 COPY ./target/calculatorDevOps-1.0-SNAPSHOT-jar-with-dependencies.jar ./
 WORKDIR ./
-CMD ["java", "-jar", "calculatorDevOps-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+CMD ["java", "-Dlog4j.configurationFile=./resources/log42j.xml", "-jar", "calculatorDevOps-1.0-SNAPSHOT-jar-with-dependencies.jar"]
 
 # Start with a base image
 # FROM openjdk:11
