@@ -51,33 +51,40 @@ pipeline{
                 
             }
         }
-        stage('Containerize') {
+        stage('Containerize (Push to Dockerhub and pull from Dockerhub)') {
             steps {
                 // sh "export PATH=$PATH:/usr/local/bin/docker"
                 sh "docker build -t calculator ."
-            }
-        }
-
-        stage('Push') {
-            steps {
                 withCredentials([usernamePassword(credentialsId: 'docker_HUb', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                     sh 'docker tag calculator bansalc73/calc_dev_ops123:latest'
                     sh 'docker push bansalc73/calc_dev_ops123:latest'
                 }
+                sh 'docker pull bansalc73/calc_dev_ops123:latest'
+
             }
         }
-        stage('Pull Docker Image') {
-            steps {
-                script {
 
-                        // docker.image(DOCKER_IMAGE).pull()
-                        // docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
-                       sh 'docker pull bansalc73/calc_dev_ops123:latest'
+        // stage('Push') {
+        //     steps {
+        //         withCredentials([usernamePassword(credentialsId: 'docker_HUb', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+        //             sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+        //             sh 'docker tag calculator bansalc73/calc_dev_ops123:latest'
+        //             sh 'docker push bansalc73/calc_dev_ops123:latest'
+        //         }
+        //     }
+        // }
+        // stage('Pull Docker Image') {
+        //     steps {
+        //         script {
 
-                }
-            }
-        }
+        //                 // docker.image(DOCKER_IMAGE).pull()
+        //                 // docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
+        //                sh 'docker pull bansalc73/calc_dev_ops123:latest'
+
+        //         }
+        //     }
+        // }
 
         stage('Ansible Deployment') {
             steps {
@@ -86,5 +93,21 @@ pipeline{
                 }
             }
         }
+
+         stage('Monitor'){
+            steps{
+                 dir('/Users/chiragbansal') {
+                    /* execute commands in the scripts directory */
+                    // sh "javac CalculatorTest.java"
+                    // sh "java CalculatorTest"
+                    // sh "javac -cp lib/junit-4.13.jar:lib/hamcrest-core-1.3.jar -d bin src/*.java test/*.java"
+                    // sh "java -cp lib/junit-4.13.jar:lib/hamcrest-core-1.3.jar:bin org.junit.runner.JUnitCore CalculatorTest"
+                    sh "docker compose up -d"
+                }
+                
+            }
+        }
+
+
     }
 }
