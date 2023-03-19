@@ -67,22 +67,12 @@ pipeline{
                 }
             }
         }
-
-        // stage('Docker Compose') {
-        //     steps{
-        //         script{
-        //             sh 'docker compose up'
-        //         }
-        //     }
-        // }
-
-
         stage('Pull Docker Image') {
             steps {
                 script {
 
                         // docker.image(DOCKER_IMAGE).pull()
-                       sh 'ansible-playbook -i inventory deploy.yml'
+                       sh 'docker pull bansalc73/calc_dev_ops123:latest'
 
                 }
             }
@@ -92,7 +82,7 @@ pipeline{
             steps {
                 script {
                     // docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
-                    sh 'docker run -i -p 5000:5000 --name cal_container bansalc73/calc_dev_ops123:latest'
+                    sh 'ansible-playbook -i inventory deploy.yml'
                 }
             }
         }
