@@ -64,28 +64,6 @@ pipeline{
 
             }
         }
-
-        // stage('Push') {
-        //     steps {
-        //         withCredentials([usernamePassword(credentialsId: 'docker_HUb', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-        //             sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-        //             sh 'docker tag calculator bansalc73/calc_dev_ops123:latest'
-        //             sh 'docker push bansalc73/calc_dev_ops123:latest'
-        //         }
-        //     }
-        // }
-        // stage('Pull Docker Image') {
-        //     steps {
-        //         script {
-
-        //                 // docker.image(DOCKER_IMAGE).pull()
-        //                 // docker.image(DOCKER_IMAGE).run('-p', PORTS, '--name', CONTAINER_NAME)
-        //                sh 'docker pull bansalc73/calc_dev_ops123:latest'
-
-        //         }
-        //     }
-        // }
-
         stage('Ansible Deployment') {
             steps {
                 script { 
