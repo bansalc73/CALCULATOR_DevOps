@@ -1,5 +1,5 @@
 # CALCULATOR_DevOps
-
+SPE MINI_PROJECT
 This pipleine is used to deoply a simple java calculator using DevOps tools. I have used following tools :
 Jenkins : CI/CD tool
 Git :Source Control Management
