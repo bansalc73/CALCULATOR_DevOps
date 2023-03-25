@@ -28,7 +28,7 @@ public class Calculator {
             switch (choice) {
                 case 1:
                     // Factorial
-                    System.out.print("Enter a number : ");
+                    System.out.print("Enter a number to calculate factorial: ");
                     number1 = scanner.nextDouble();
                     System.out.println("Factorial of "+number1+" is : " + calculator.factorial(number1));
                     System.out.println("\n");

@@ -1,16 +1,18 @@
-2023-03-20 06:12:36.602 [main] INFO  Calculator - [FACTORIAL] - 3.0
-2023-03-20 06:12:36.610 [main] INFO  Calculator - [RESULT - FACTORIAL] - 6.0
-2023-03-20 06:12:40.313 [main] INFO  Calculator - [SQ ROOT] - 36.0
-2023-03-20 06:12:40.315 [main] INFO  Calculator - [RESULT - SQ ROOT] - 6.0
-2023-03-20 06:12:44.352 [main] INFO  Calculator - [POWER - 4.0 RAISED TO] 6.0
-2023-03-20 06:12:44.356 [main] INFO  Calculator - [RESULT - POWER] - 4096.0
-2023-03-20 06:12:49.532 [main] INFO  Calculator - [NATURAL LOG] - 57.0
-2023-03-20 06:12:49.533 [main] INFO  Calculator - [RESULT - NATURAL LOG] - 4.04305126783455
-2023-03-20 06:12:55.496 [main] INFO  Calculator - [FACTORIAL] - 8.0
-2023-03-20 06:12:55.499 [main] INFO  Calculator - [RESULT - FACTORIAL] - 40320.0
-2023-03-20 06:13:04.367 [main] INFO  Calculator - [SQ ROOT] - 100.0
-2023-03-20 06:13:04.370 [main] INFO  Calculator - [RESULT - SQ ROOT] - 10.0
-2023-03-20 06:13:13.227 [main] INFO  Calculator - [POWER - 5.0 RAISED TO] 3.0
-2023-03-20 06:13:13.228 [main] INFO  Calculator - [RESULT - POWER] - 125.0
-2023-03-20 06:13:19.348 [main] INFO  Calculator - [NATURAL LOG] - 346.0
-2023-03-20 06:13:19.349 [main] INFO  Calculator - [RESULT - NATURAL LOG] - 5.846438775057725
+2023-03-25 11:04:57.421 [main] INFO  Calculator - [SQ ROOT] - 100.0
+2023-03-25 11:04:57.426 [main] INFO  Calculator - [RESULT - SQ ROOT] - 10.0
+2023-03-25 11:05:01.391 [main] INFO  Calculator - [SQ ROOT] - 78.0
+2023-03-25 11:05:01.393 [main] INFO  Calculator - [RESULT - SQ ROOT] - 8.831760866327848
+2023-03-25 11:05:09.697 [main] INFO  Calculator - [POWER - 4.0 RAISED TO] 3.0
+2023-03-25 11:05:09.703 [main] INFO  Calculator - [RESULT - POWER] - 64.0
+2023-03-25 11:05:16.488 [main] INFO  Calculator - [SQ ROOT] - 81.0
+2023-03-25 11:05:16.490 [main] INFO  Calculator - [RESULT - SQ ROOT] - 9.0
+2023-03-25 11:05:21.563 [main] INFO  Calculator - [NATURAL LOG] - 8674.0
+2023-03-25 11:05:21.566 [main] INFO  Calculator - [RESULT - NATURAL LOG] - 9.068085324395312
+2023-03-25 11:05:26.804 [main] INFO  Calculator - [FACTORIAL] - 3.0
+2023-03-25 11:05:26.805 [main] INFO  Calculator - [RESULT - FACTORIAL] - 6.0
+2023-03-25 11:05:28.572 [main] INFO  Calculator - [FACTORIAL] - 5.0
+2023-03-25 11:05:28.574 [main] INFO  Calculator - [RESULT - FACTORIAL] - 120.0
+2023-03-25 11:05:33.621 [main] INFO  Calculator - [FACTORIAL] - 7.0
+2023-03-25 11:05:33.624 [main] INFO  Calculator - [RESULT - FACTORIAL] - 5040.0
+2023-03-25 11:05:39.556 [main] INFO  Calculator - [NATURAL LOG] - 123.0
+2023-03-25 11:05:39.559 [main] INFO  Calculator - [RESULT - NATURAL LOG] - 4.812184355372417
